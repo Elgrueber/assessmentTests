@@ -2,8 +2,8 @@ import { expect, Locator, Page } from '@playwright/test';
 
 export default class LoginPage {
     private page: Page;
-    private emailAddressInput: any[] | Locator;
-    private passwordInput: any[] | Locator;
+    private emailAddressInput: Locator;
+    private passwordInput: Locator;
     private signInBtn: Locator;
 
     constructor(page: Page) {

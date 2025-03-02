@@ -1,4 +1,7 @@
 import { faker } from '@faker-js/faker';
+import SuccessPurchasePage from './pom/pages/SuccessPurchasePage';
+import CheckoutPage from './pom/pages/CheckoutPage';
+import CreateAccountPage from './pom/pages/CreateAccountPage';
 
 export const getRandomEmail = () => {
     return faker.internet.email();
@@ -28,12 +31,24 @@ export const getRandomPassword = (length?: number) => {
     return password;
 };
 
-export const fistName = faker.person.firstName();
-export const lastName = faker.person.lastName();
+export const PERSON_NAME = {
+    firstName: faker.person.firstName(),
+    lastName: faker.person.lastName(),
+};
 
-export const address = {
-    city: 'Paris',
-    street: 'Main',
-    'zip code': '12345',
-    phone: '123456789',
+export const ADDRESS_DETAILS = {
+    city: faker.location.city(),
+    street: faker.location.street(),
+    zip: faker.location.zipCode(),
+    phone: faker.phone.number(),
+};
+
+export const PAGE_TITLE = {
+    HomePage: 'Home Page',
+    LoginPage: 'Customer Login',
+    AccountPage: 'My Account',
+    LogoutPage: 'You are signed out',
+    ShippingPage: 'Shipping Address',
+    SuccessPurchasePage: 'Thank you for your purchase!',
+    CreateAccountPage: 'Create New Customer Account',
 };

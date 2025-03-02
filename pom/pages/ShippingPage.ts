@@ -4,8 +4,8 @@ export default class LoginPage {
     private page: Page;
     private streetInput: Locator;
     private cityInput: Locator;
-    private regionInput: Locator;
-    private nameRegion: Promise<string[]>;
+    private regionDropdown: Locator;
+    private nameRegion: Locator;
     private zipCodeInput: Locator;
     private phoneInput: Locator;
     private rateShipping: Locator;
@@ -15,8 +15,8 @@ export default class LoginPage {
         this.page = page;
         this.streetInput = page.getByRole('textbox', { name: 'Street Address: Line 1' });
         this.cityInput = page.getByRole('textbox', { name: 'City *' });
-        this.regionInput = page.locator('select[name="region_id"]');
-        this.nameRegion = page.selectOption('select[name="region_id"]', { label: 'Alaska' });
+        this.regionDropdown = page.locator('//select[@class = "select"][@name = "region_id"]');
+        this.nameRegion = page.locator('select[name="region_id"]');
         this.zipCodeInput = page.getByRole('textbox', { name: 'Zip/Postal Code *' });
         this.phoneInput = page.getByRole('textbox', { name: 'Phone Number *' });
         this.rateShipping = page.getByRole('radio', { name: 'Table Rate Best Way' });
@@ -27,10 +27,10 @@ export default class LoginPage {
         await this.streetInput.fill(value);
     }
     async fillCityInput(value: string) {
-        await this.cityInput.fill(value); 
+        await this.cityInput.fill(value);
     }
-    async clickRegionInput() {
-        await this.regionInput.click();
+    async clickRegionDropdown() {
+        await this.regionDropdown.click();
     }
     async fillZipCodeInput(value: string) {
         await this.zipCodeInput.fill(value);
@@ -44,7 +44,7 @@ export default class LoginPage {
     async clickSubmitShipping() {
         await this.submitShipping.click();
     }
-    async clickNameRegion() {
-        await this.clickNameRegion();
+    async clickNameRegion(index: number) {
+        await this.nameRegion.selectOption({ index: index });
     }
 }

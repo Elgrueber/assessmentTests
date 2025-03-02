@@ -14,7 +14,7 @@ export default class LoginPage {
         this.firstSizeOption = page.getByRole('option').first();
         this.firstColorOption = page.locator('.swatch-option.color').first();
         this.addToCartBtn = page.getByRole('button', { name: 'Add to Cart' });
-        this.addedToCartMessage = page.getByText('You added Echo Fit');
+        this.addedToCartMessage = page.locator('div', { hasText: /added.*shopping.*cart/i }).first();
     }
 
     async clickItemChoosen() {

@@ -6,9 +6,9 @@ export default class SuccessPurchasePage {
 
     constructor(page: Page) {
         this.page = page;
-        this.successPurchaseMessage = page.locator("[data-ui-id = 'page-title-wrapper']");
     }
+
     getSuccessPurchaseMessage() {
-        return this.successPurchaseMessage;
+        return this.page.getByText('Thank you for your purchase!');
     }
 }

@@ -7,6 +7,9 @@ import ProceedCheckoutModal from './pom/modalWindows/ProceedCheckoutModal';
 import ShippingPage from './pom/pages/ShippingPage';
 import CheckoutPage from './pom/pages/CheckoutPage';
 import SuccessPurchasePage from './pom/pages/SuccessPurchasePage';
+import LogoutPage from './pom/pages/LogoutPage';
+import CreateAccountPage from './pom/pages/CreateAccountPage';
+import AccountPage from './pom/pages/AccountPage';
 
 type MyFixtures = {
     homePage: HomePage;
@@ -17,6 +20,9 @@ type MyFixtures = {
     shippingPage: ShippingPage;
     checkoutPage: CheckoutPage;
     successPurchasePage: SuccessPurchasePage;
+    logoutPage: LogoutPage;
+    createAccountPage: CreateAccountPage;
+    accountPage: AccountPage;
     password: string;
     email: string;
 };
@@ -45,6 +51,15 @@ export const test = base.extend<MyFixtures>({
     },
     successPurchasePage: async ({ page }, use) => {
         await use(new SuccessPurchasePage(page));
+    },
+    logoutPage: async ({ page }, use) => {
+        await use(new LogoutPage(page));
+    },
+    createAccountPage: async ({ page }, use) => {
+        await use(new CreateAccountPage(page));
+    },
+    accountPage: async ({ page }, use) => {
+        await use(new AccountPage(page));
     },
 });
 
