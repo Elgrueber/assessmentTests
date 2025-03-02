@@ -9,7 +9,7 @@
     "prettier": "npx prettier . --check",
     "prettier:fix": "npm run prettier -- --write",
     "format": "npm run prettier:fix",
-    "grep": "npx playwright test --grep" 
+    "grep": "npx playwright test --grep"
   },
   "keywords": [],
   "author": "",
@@ -20,6 +20,7 @@
   },
   "dependencies": {
     "@faker-js/faker": "^9.5.0",
+    "allure-playwright": "^3.2.0",
     "dotenv": "^16.4.7"
   }
 }
