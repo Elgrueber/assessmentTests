@@ -18,7 +18,7 @@ test.describe('Registration', () => {
 
         await expect(accountPage.getMessageSignIn()).toBeVisible();
         await expect(accountPage.getTitle()).toHaveText(PAGE_TITLE.AccountPage);
-            
+
         const emailText = await accountPage.getEmailAccountText();
         expect(emailText).toContain(email);
     });

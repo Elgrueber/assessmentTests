@@ -1,6 +1,5 @@
 import { test, expect } from '../fixtures';
 import { ADDRESS_DETAILS, getRandomEmail, getRandomPassword } from '../testData';
-import { randomIndex } from '../helpers/utils';
 
 const email = getRandomEmail();
 const password = getRandomPassword();
